@@ -18,7 +18,7 @@ end
 subplot(212);
 title('R load Output');
 plot(signal);
-%Calculations for half wave rectifier
+%Calculations for half wave rectifier for R Load
 vin_rms=vin/sqrt(2);
 vo_rms_th=vin/2;
 vo_rms_obs=input('Enter the rms observed voltage:');
