@@ -43,3 +43,49 @@ disp('vo mean (Observed)')
 display(vo_mean_obs);
 disp('Error Mean:')
 display(err_mean);
+%Calculations for RL Load
+beta=input('Enter value of Beta:');
+vdc_rl_th=(vin/(2*pi))*(1-cos(pi+beta));
+R=input('Enter Value of R');
+L=input('Enter value of L');
+idc_rl_th=(vdc_rl_th/R);
+vorms_rl_th=(vin/sqrt(2))*(sqrt((2*beta-sin(2*beta))/(2*pi)));
+Z=sqrt(R^2+L^2);
+iorms_rl_th=(vorms_rl_th/Z);
+vdc_rl_obs=input('Enter Mean Voltage value observed:');
+err_vdc_rl=vdc_rl_th/vdc_rl_obs;
+vorms_rl_obs=input('Enter the RMS Voltage value observed:');
+err_vorms_rl=vorms_rl_th/vorms_rl_obs;
+idc_rl_obs=input('Enter the Mean Current Value:');
+iorms_rl_obs=input('Enter the RMS Current value:');
+err_idc_rl=idc_rl_th/idc_rl_obs;
+err_iorms_rl=iorms_rl_th/iorms_rl_obs;
+disp('Calculations:');
+disp('Vin:')
+display(vin);
+disp('Z:')
+display(Z);
+disp('vo rms (theoretical):')
+display(vorms_rl_th);
+disp('vo rms (observed):')
+display(vorms_rl_obs);
+disp('Error (rms):')
+display(err_vorms_rl);
+disp('vo mean (theoretical)')
+display(vdc_rl_th);
+disp('vo mean (Observed)')
+display(vdc_rl_obs);
+disp('Error Mean:')
+display(err_vdc_rl);
+disp('Current Mean (Theoretical)')
+display(idc_rl_th);
+disp('Current Mean (Observed)')
+display(idc_rl_obs);
+disp('Current Mean Error')
+display(err_idc_rl);
+disp('Current RMS (Theoretical)')
+display(iorms_rl_th);
+disp('Current RMS (Observed)')
+display(iorms_rl_obs);
+disp('Error Current RMS')
+display(err_iorms_rl);
